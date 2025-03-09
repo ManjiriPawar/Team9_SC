@@ -1,0 +1,52 @@
+/* Progress Bar Container */
+.progress-bar-container {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0; /* Light gray background */
+    border-radius: 5px;
+    overflow: hidden; /* Ensure the fill doesn't overflow */
+    position: relative; /* Needed for absolute positioning of child elements */
+  }
+  
+  /* Progress Bar Fill */
+  .progress-bar-fill {
+    height: 100%;
+    background-color: #4caf50; /* Green fill color */
+    transition: width 0.5s ease; /* Smooth animation */
+    position: absolute; /* Position the fill within the progress bar */
+    left: 0;
+    top: 0;
+  }
+  
+  /* Flag at the End of the Progress Bar */
+  .progress-bar-flag {
+    position: absolute;
+    top: -20px; /* Adjust position */
+    right: 0;
+    text-align: center;
+  }
+  
+  .flag-icon {
+    font-size: 24px; /* Flag size */
+  }
+  
+  .flag-text {
+    font-size: 12px; /* Text size */
+    color: #333; /* Text color */
+    margin-top: 4px; /* Space between flag and text */
+  }
+  
+  /* Woman Icon at Current Progress */
+  .progress-bar-woman {
+    position: absolute;
+    top: -25px; /* Adjust position */
+    transform: translateX(-50%); /* Center the icon */
+    text-align: center;
+  }

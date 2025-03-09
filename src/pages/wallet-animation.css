@@ -1,0 +1,196 @@
+.wallet-container {
+    position: fixed; /* Make it overlay */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 9999; /* Ensure it's above everything */
+    backdrop-filter: blur(5px); /* Optional: Add blur effect */
+  }
+  
+  /* Center wallet section */
+  .wallet-section {
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  /* Wallet styling */
+  .wallet {
+    width: 220px;
+    height: 140px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wallet.open {
+    transform: rotateX(160deg);
+  }
+  
+  /* Wallet front and inside styling */
+  .wallet-front,
+  .wallet-inside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .wallet-front {
+    background: linear-gradient(145deg, #ff7e5f, #feb47b);
+    color: white;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wallet-inside {
+    background: linear-gradient(145deg, #f9f9f9, #ececec);
+    transform: rotateX(180deg);
+    padding: 15px;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .wallet-icon {
+    margin-bottom: 10px;
+  }
+  
+  .wallet-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  /* Wallet content styling */
+  .wallet-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+  
+  .card-icon {
+    margin-bottom: 10px;
+    color: #6c5ce7;
+  }
+  
+  .amount-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+  
+  .coins-icon {
+    color: #ffa41b;
+  }
+  
+  .amount {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2d3436;
+    font-family: "Courier New", monospace;
+  }
+  
+  .wallet-info {
+    font-size: 0.9rem;
+    color: #636e72;
+    margin-top: 5px;
+  }
+  
+  /* Woman character */
+  .woman-character {
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .woman-character.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .woman-image {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Speech bubble */
+  .speech-bubble {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 15px;
+    margin-top: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: #2d3436;
+    max-width: 150px;
+    text-align: center;
+  }
+  
+  .speech-bubble:after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .wallet-container {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .woman-character {
+      margin-top: 2rem;
+    }
+  }
+  
+  .wallet.open {
+    transform: rotateX(160deg);
+    backface-visibility: visible; /* Ensure it's fully visible */
+  }
+  
+  .wallet-inside {
+    background: linear-gradient(145deg, #f9f9f9, #ececec);
+    transform: rotateX(180deg);
+    padding: 15px;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.05);
+    backface-visibility: visible; /* Make sure it’s not hidden */
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    z-index: 10000; /* Ensure it's above other elements */
+  }

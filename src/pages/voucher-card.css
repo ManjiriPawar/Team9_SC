@@ -1,0 +1,114 @@
+.voucher-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 12px; /* Reduce padding to decrease height */
+  }
+  
+  .voucher-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  }
+  
+  .voucher-content {
+    padding: 12px; /* Reduce content padding */
+  }
+  
+  .voucher-brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px; /* Reduce margin */
+  }
+  
+  .brand-icon {
+    width: 40px; /* Reduce icon size */
+    height: 40px;
+    background-color: #f0e6ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px; /* Reduce spacing */
+  }
+  
+  .brand-info h2 {
+    font-size: 16px; /* Reduce font size */
+    font-weight: 600;
+    margin: 0 0 2px 0;
+    color: #333;
+  }
+  
+  .description {
+    font-size: 13px; /* Reduce font size */
+    color: #666;
+    margin: 0;
+  }
+  
+  .voucher-details {
+    background-color: #f9f9f9;
+    padding: 12px; /* Reduce padding */
+    border-radius: 8px;
+  }
+  
+  .discount-info {
+    margin-bottom: 12px; /* Reduce margin */
+  }
+  
+  .discount-info h3 {
+    font-size: 13px; /* Reduce font size */
+    font-weight: 600;
+    margin: 0 0 2px 0;
+    color: #555;
+  }
+  
+  .discount-info p {
+    font-size: 14px; /* Reduce font size */
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+  }
+  
+  .coins-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px; /* Reduce spacing */
+  }
+  
+  .coins-required {
+    display: flex;
+    align-items: center;
+    font-size: 14px; /* Reduce font size */
+    font-weight: 600;
+    color: #6200ee;
+    margin: 0 0 2px 0;
+  }
+  
+  .coins-shortage {
+    font-size: 13px; /* Reduce font size */
+    color: #e53935;
+    margin: 0;
+  }
+  
+  .redeem-button {
+    width: 100%;
+    padding: 8px; /* Reduce button padding */
+    background-color: #6200ee;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 14px; /* Reduce button text size */
+  }
+  
+  .redeem-button:hover:not(.disabled) {
+    background-color: #5000d6;
+  }
+  
+  .redeem-button.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }

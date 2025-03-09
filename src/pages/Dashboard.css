@@ -1,0 +1,280 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --sidebar-width: 250px;
+  --navbar-height: 70px;
+  --primary-color: #2c3e50;
+  --hover-color: #34495e;
+  --text-light: #ecf0f1;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding-top: var(--navbar-height);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures space between top and bottom */
+  z-index: 1000;
+}
+
+.nav.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adds spacing between sidebar links */
+  padding: 20px; /* Adds padding inside the sidebar */
+}
+
+.sidebar-link {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidebar-link:hover {
+  background-color: var(--hover-color);
+  color: var(--text-light);
+}
+
+.sidebar-link svg {
+  margin-right: 12px;
+}
+
+/* New class for the logout button */
+.sidebar .logout-button {
+  margin-top: auto;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  padding: 15px 15px;
+  text-align: center;
+  background-color: #ff4444 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto !important; /* Ensure clicks are allowed */
+  opacity: 1 !important; /* Ensure the button is fully visible */
+}
+
+.sidebar .logout-button:hover {
+  background-color: #cc0000 !important;
+}
+.hidden {
+    display: none;
+}
+
+  
+
+
+.sidebar .logout-button:hover {
+  background-color: #cc0000 !important;
+}
+.logout-button:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+
+.main-content {
+  margin-left: var(--sidebar-width);
+  padding: 20px;
+  padding-top: calc(var(--navbar-height) + 20px);
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.top-navbar {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  height: var(--navbar-height);
+  background-color: white;
+  box-shadow: var(--shadow-sm);
+  z-index: 999;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.user-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: var(--primary-color);
+  padding: 8px 16px;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.stat-item:hover {
+  background-color: #e9ecef;
+  transform: translateY(-1px);
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.profile-icon:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-sm);
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.ms-2 {
+  margin-left: 0.75rem;
+}
+
+/* Container for the progress bar */
+.progress-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Outer container of the progress bar */
+.progress-bar-container {
+  width: 100%;
+  height: 25px;
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* Percentage label */
+.progress-container span {
+  font-weight: bold;
+  color: #333;
+}
+
+.progress-bar-container {
+  height: 20px;
+  width: 100%;
+  transition: ease-in-out;
+}
+
+.chart-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.month-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Smaller arrow buttons */
+.month-nav-button {
+  font-size: 12px;
+  padding: 3px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.month-nav-button:hover {
+  background-color: #e9ecef;
+}
+
+.month-navigation span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.bar-chart-container {
+  margin-top: 20px;
+  width: 800px;
+  height: 400px;
+}
