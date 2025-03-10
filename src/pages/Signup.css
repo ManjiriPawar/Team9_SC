@@ -91,6 +91,7 @@
 
 .signup-container .login-link p {
   margin-top: 1rem !important; /* Same as login-container */
+  color: rgba(183, 110, 121, 0.9);
 }
 
 /* src/components/Signup.css */
