@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import SavingsJar from "../animation/saving-jar";
+import AuthLayout from "./AuthLayout";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,63 +16,50 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("Login successful!");
+      alert("Welcome, financial boss ! 🎉\nYour dreams deserve every penny saved ! 💖");
       navigate("/dashboard"); // Redirect to dashboard after login
     } catch (err) {
       setError("Invalid email or password.");
     }
   };
 
+  
   return (
-    <div className="shevault-container">
-      {/* Left Side: Login Form */}
-      <div className="login-form">
-        <div className="savings-jar-container">
-          <SavingsJar />
-        </div>
-        <h1 className="text-3xl md:text-4xl font-bold text-charcoal mb-2">
-          Welcome Back
-        </h1>
-        <p className="text-gray-600">Continue your financial journey with us</p>
-        {error && <p className="error-message">{error}</p>}
-        <form onSubmit={handleLogin}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit">Login</button>
-        </form>
-        <div className="login-links">
-          <Link to="/forgot-password">Forgot Password?</Link>
-          <p>
-            Don't have an account? <Link to="/signup">Sign Up</Link>
-          </p>
-        </div>
+    <AuthLayout>
+      <div className="savings-jar-container">
+        <SavingsJar />
       </div>
-
-      {/* Right Side: Image, App Name, and Tagline */}
-      <div className="shevault-content">
-        <div className="shevault-image">
-        <img
-            src="https://media.istockphoto.com/id/1335032831/vector/business-woman-watering-money-tree-female-employee-investing-and-saving-cash-money-deposit.jpg?s=612x612&w=0&k=20&c=wylOvpHuxoXUVB4rVb8_zp7kYsJ2DA4wZzISafsNpXo="
-            alt="Women Financial Saving Tracker"
-          />
-        </div>
-        <h1 className="shevault-title">SheVault</h1>
-        <p className="shevault-tagline">
-          Empowering Women to Save, Invest, and Grow
+      <h1 className="text-3xl md:text-4xl font-bold text-charcoal mb-2">
+        Welcome Back
+      </h1>
+      <p className="text-gray-600">Continue your financial journey with us</p>
+      {error && <p className="error-message">{error}</p>}
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Login</button>
+      </form>
+      <div className="login-links">
+        <Link to="/forgot-password">Forgot Password?</Link>
+        <p>
+          Don't have an account? <Link to="/signup">Sign Up</Link>
         </p>
       </div>
-    </div>
+    </AuthLayout>
   );
 };
 
 export default Login;
+
+
+
