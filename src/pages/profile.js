@@ -169,7 +169,8 @@ function Profile() {
 
       {/* Back to Dashboard button placed OUTSIDE the main box */}
       <div className="dashboard-btn-container">
-        <button onClick={() => navigate("/dashboard")} className="dashboard-btn">← Back to Dashboard</button>
+        <button onClick={() => navigate("/dashboard")} className="dashboard-btn"
+          >← Back to Dashboard</button>
       </div>
     </div>
   );
