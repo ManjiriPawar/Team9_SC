@@ -2,134 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap");
 
 /* Base Styles */
-body {
-  
-  font-family: "Open Sans", sans-serif !important;
-  letter-spacing: 0.5px !important;
-  background-color: #d2a6c2 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: left !important;
-  min-height: 100vh !important;
-}
-
-.login-container {
-  background-color: pink;
-  padding: 3rem !important;
-  border-radius: 12px !important;
-  box-shadow: 0 8px 20px rgba(183, 110, 121, 0.15) !important;
-  width: 100% !important;
-  max-width: 500px !important;
-  text-align: center !important;
-  position: absolute;
-  left: 20%; /* Adjust this value to move it more or less to the left */
-
-  transform: translateY(-50%);
-}
-
-h2 {
-  font-family: "Montserrat", sans-serif !important;
-  font-size: 2rem !important; /* Increased font size */
-  font-weight: 600 !important;
-  color: #2f2f2f !important;
-  margin-bottom: 2rem !important; /* Increased margin */
-}
-
-.error-message {
-  color: #ff4d4d !important;
-  font-size: 0.875rem !important;
-  margin-bottom: 1.5rem !important; /* Increased margin */
-}
-
-form {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 1.5rem !important; /* Increased gap */
-  width: 70%;
-}
-
-input {
-  width: 100% !important;
-  padding: 16px 20px !important; /* Further increased padding */
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  border: 2px solid rgba(183, 110, 121, 0.2) !important;
-  border-radius: 12px !important;
-  font-family: "Open Sans", sans-serif !important;
-  font-size: 1.1rem !important; /* Further increased font size */
-  color: #2f2f2f !important;
-  transition: all 0.3s ease-in-out !important;
-  margin-bottom: 10px !important; /* Added margin bottom */
-}
-
-input:focus {
-  outline: none !important;
-  border-color: #b76e79 !important;
-  box-shadow: 0 0 0 2px rgba(183, 110, 121, 0.2) !important;
-}
-
-button {
-  background-color: #b76e79 !important;
-  color: white !important;
-  font-family: "Montserrat", sans-serif !important;
-  font-weight: 600 !important;
-  padding: 14px 28px !important; /* Increased padding */
-  border: none !important;
-  border-radius: 12px !important;
-  cursor: pointer !important;
-  font-size: 1rem !important; /* Increased font size */
-  transition: all 0.3s ease-in-out !important;
-}
-
-button:hover {
-  background-color: rgba(183, 110, 121, 0.9) !important;
-  box-shadow: 0 8px 20px rgba(183, 110, 121, 0.15) !important;
-  transform: scale(1.02) !important;
-}
-
-button:focus {
-  outline: none !important;
-  box-shadow: 0 0 0 2px rgba(183, 110, 121, 0.5) !important;
-}
-
-.login-links {
-  margin-top: 2rem !important; /* Increased margin */
-  font-size: 0.875rem !important;
-  color: #6b7280 !important;
-}
-
-.login-links a {
-  color: #b76e79 !important;
-  text-decoration: none !important;
-  font-weight: 600 !important;
-  transition: color 0.3s ease-in-out !important;
-}
-
-.login-links a:hover {
-  color: rgba(183, 110, 121, 0.9) !important;
-}
-
-.login-links p {
-  margin-top: 1rem !important; /* Increased margin */
-}
-
-/* SheVault.css */
-.shevault-container {
-  display: flex;
-  height: 100vh;
-  background-color: skyblue;
-}
-
 /* Left Side: Login Form */
 .login-form {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #fff;
+  align-items: flex-start; /* Align items to the left */
+  padding: 20px 20px 20px 0px; /* Reduce left padding */
+  background-color:  #f8f9fa;;
 }
 
 .login-form h2 {
@@ -138,76 +19,71 @@ button:focus {
   color: #333;
 }
 
-.login-form .form-group {
-  margin-bottom: 20px; /* Increased margin */
-  width: 100%;
-  max-width: 340px; /* Increased max-width */
-}
 
-.login-form label {
-  display: block;
-  margin-bottom: 8px; /* Increased margin */
-  color: #666;
-  font-size: 1.05rem; /* Increased font size */
-}
-
-.login-form input {
-  width: 100%;
-  padding: 14px; /* Increased padding */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1.1rem; /* Increased font size */
-}
-
-.login-form button {
-  width: 100%;
-  padding: 14px; /* Increased padding */
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.1rem; /* Increased font size */
-}
-
-.login-form button:hover {
-  background-color: #0056b3;
-}
-
-/* Right Side: Image, App Name, and Tagline */
-.shevault-content {
-  flex: 1;
+form {
+  width: 100%; /* Ensure the form takes full width of its container */
+  max-width: 400px; /* Adjust as needed */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #f0f0f0;
+  gap: 1.5rem;
+  margin-left: 0; /* Remove any left margin */
+  padding-left: 0; /* Remove any left padding */
 }
 
-.shevault-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.shevault-title {
-  font-size: 3rem;
-  color: #333;
+input {
+  width: 100%;
+  padding: 16px 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(183, 110, 121, 0.2);
+  border-radius: 12px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.1rem;
+  color: #2f2f2f;
+  transition: all 0.3s ease-in-out;
   margin-bottom: 10px;
 }
 
-.shevault-tagline {
-  font-size: 1.2rem;
-  color: #942a58;
+button {
+  background-color: #b76e79;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: rgba(183, 110, 121, 0.9);
+  box-shadow: 0 8px 20px rgba(183, 110, 121, 0.15);
+  transform: scale(1.02);
+}
+
+.login-links {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.login-links a {
+  color: #b76e79;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.login-links a:hover {
+  color: rgba(183, 110, 121, 0.9);
 }
 
 /* Modified savings jar container to add more space at the top */
 .savings-jar-container {
   position: absolute;
-  top: 13%; /* Increased from 23% to add more space at top */
-  left: 26%;
+  top: 15%; /* Increased from 23% to add more space at top */
+  left: 27%;
   transform: translate(-50%, -50%);
   z-index: 1; /* Ensure it's above other content */
 }
